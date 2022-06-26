@@ -50,4 +50,4 @@ jobs:
         run: ls -alh ./
 
       - name: Detect coding standard violations
-        run: vendor/bin/phpcs -q --report=checkstyle | cs2pr --graceful-warnings
+        run: vendor/bin/phpcs -q --report=checkstyle app/ tests/ bootstrap/ database/ | cs2pr --graceful-warnings
