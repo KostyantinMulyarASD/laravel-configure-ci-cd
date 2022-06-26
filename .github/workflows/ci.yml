@@ -52,4 +52,5 @@ jobs:
       - name: PHP Stan scan
         uses: php-actions/phpstan@v3
         with:
-          path: src/
+          configuration: ./phpstan.neon
+          memory_limit: 256M
