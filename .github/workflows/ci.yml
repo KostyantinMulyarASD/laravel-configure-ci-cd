@@ -46,8 +46,10 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-suggest --no-progress
 
-      - name: List of files
-        run: ls -alh ./
-
       - name: Detect coding standard violations
         run: vendor/bin/phpcs -q --report=checkstyle app/ tests/ bootstrap/ database/ | cs2pr --graceful-warnings
+
+      - name: PHP Stan scan
+        uses: php-actions/phpstan@v3
+        with:
+          path: src/
