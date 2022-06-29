@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           archive_format: cis.tar
-          path: /artifacts
+          path: /tmp/artifacts
 
   phpcs:
     runs-on: ubuntu-latest
