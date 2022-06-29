@@ -39,10 +39,14 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-suggest --no-progress
 
+      - name: Tar files
+        run: tar -cvf cis.tar /artifacts
+
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          path: vendor
+          archive_format: cis.tar
+          path: /artifacts
 
   phpcs:
     runs-on: ubuntu-latest
